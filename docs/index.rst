@@ -1,7 +1,3 @@
-import os
-
-# Sphinx documentation generation for XMT-R including images
-sphinx_doc = """
 Geophysical Transmitter Controller (XMT-R) Documentation
 =======================================================
 
@@ -131,11 +127,4 @@ The web interface includes an **Admin Page** that offers additional settings and
 
 .. image:: img/webapp/3.png
    :alt: Admin page options
-"""
 
-# Save the generated Sphinx documentation to a .rst file
-output_file_path = '/mnt/data/XMT-R_documentation.rst'
-with open(output_file_path, 'w') as file:
-    file.write(sphinx_doc)
-
-output_file_path
