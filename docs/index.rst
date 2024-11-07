@@ -102,7 +102,7 @@ The main page of the web interface displays the same core information as the dev
 - **Mode Selection Dropdown**: Allows the user to select the desired mode.
 - **Frequency Selection Dropdown**: Allows the user to select the frequency based on the current mode.
 
-.. image:: img/hardware/1.png
+.. image:: img/webapp/1.png
    :alt: Web interface main page overview
 
 Additionally, a More button is available that:
@@ -118,7 +118,7 @@ In **Custom Mode**, users also have the ability to: (This option is only availab
 
 - **Upload User Profiles**: These profiles are stored within the transmitter, allowing the user to switch easily between different pre-configured settings.
 
-.. image:: img/hardware/2.png
+.. image:: img/webapp/2.png
    :alt: User profile upload option
 
 2.3 Admin Page
@@ -129,7 +129,7 @@ The web interface includes an **Admin Page** that offers additional settings and
 - **FPGA Updates**: Update the internal FPGA of the transmitter.
 - **Wi-Fi Settings**: Set the Wi-Fi mode to either Hotspot mode or connect to a Local Network by providing the network credentials.
 
-.. image:: img/hardware/3.png
+.. image:: img/webapp/3.png
    :alt: Admin page options
 """
 
