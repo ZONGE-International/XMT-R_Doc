@@ -43,8 +43,6 @@ The XMT-R hardware includes:
 - **DOWN Button**: Scrolls down through options.
 - **NEXT Button**: Short press cycles through options, while pressing for two seconds accesses the MENU page.
 
-.. image:: screenshot/Screenshot\ 2024-11-06\ at\ 10.11.01.png
-   :alt: Navigation buttons overview
 
 1.3 Mode Adjustment on Main Page
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -53,7 +51,7 @@ To switch modes directly from the Main Page:
 1. Make sure you have MODE selected (using the NEXT button).
 2. Press and hold the UP or DOWN button for two seconds to change the mode. (This delay is for safety reasons to prevent accidental mode changes.)
 
-.. image:: img_n/img---2.gif
+.. image:: img/hardware/img---7.gif
    :alt: Mode adjustment illustration
 
 1.4 Frequency Adjustment on Main Page
@@ -63,7 +61,7 @@ To adjust the frequency directly from the Main Page:
 1. Make sure you have FREQUENCY selected (using the NEXT button).
 2. Press the UP or DOWN button to increase or decrease the frequency setting.
 
-.. image:: screenshot/Screenshot\ 2024-11-06\ at\ 10.34.56.png
+.. image:: img/hardware/img---10.gif
    :alt: Frequency adjustment
 
 1.5 Menu Options
@@ -84,7 +82,10 @@ In the MENU page:
 - **Screen Light Control**: Turn the screen light on or off.
 - **Wi-Fi Control**: Enable or disable Wi-Fi and view the device's IP address if Wi-Fi is active.
 
-.. image:: img_n/img---3.gif
+.. image:: img/hardware/img---12.gif
+   :alt: Menu options overview
+
+.. image:: img/hardware/img---14.gif
    :alt: Menu options overview
 
 2. Web Interface Control
@@ -101,7 +102,7 @@ The main page of the web interface displays the same core information as the dev
 - **Mode Selection Dropdown**: Allows the user to select the desired mode.
 - **Frequency Selection Dropdown**: Allows the user to select the frequency based on the current mode.
 
-.. image:: screenshot/Screenshot\ 2024-11-06\ at\ 10.31.01.png
+.. image:: img/hardware/1.png
    :alt: Web interface main page overview
 
 Additionally, a More button is available that:
@@ -117,7 +118,7 @@ In **Custom Mode**, users also have the ability to: (This option is only availab
 
 - **Upload User Profiles**: These profiles are stored within the transmitter, allowing the user to switch easily between different pre-configured settings.
 
-.. image:: img_n/img---5.gif
+.. image:: img/hardware/2.png
    :alt: User profile upload option
 
 2.3 Admin Page
@@ -128,7 +129,7 @@ The web interface includes an **Admin Page** that offers additional settings and
 - **FPGA Updates**: Update the internal FPGA of the transmitter.
 - **Wi-Fi Settings**: Set the Wi-Fi mode to either Hotspot mode or connect to a Local Network by providing the network credentials.
 
-.. image:: screenshot/Screenshot\ 2024-11-06\ at\ 10.33.01.png
+.. image:: img/hardware/3.png
    :alt: Admin page options
 """
 
