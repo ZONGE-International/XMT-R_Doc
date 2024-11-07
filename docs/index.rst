@@ -22,7 +22,7 @@ The main page provides a quick view of essential information, including:
 - **Selected Mode**: Displays the current operational mode.
 - **Frequency**: Shows the frequency setting in use.
 
-.. image:: screenshot/Screenshot\ 2024-11-06\ at\ 10.30.30.png
+.. image:: img/hardware/img---3.gif
    :alt: Main page overview
 
 The top section of the screen displays:
@@ -32,7 +32,7 @@ The top section of the screen displays:
 - **XMT ID**: Identifies the unique transmitter ID.
 - **Wi-Fi Status**: Shows if Wi-Fi is enabled or disabled.
 
-.. image:: img_n/img---1.gif
+.. image:: img/hardware/img---4.gif
    :alt: XMT ID display
 
 1.2 Navigation and Buttons
