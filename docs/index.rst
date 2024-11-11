@@ -112,7 +112,7 @@ Users can interact with dropdown menus to select the desired Mode and Frequency 
 
 In **Custom Mode**, users also have the ability to: (This option is only available through the web app.)
 
-- **Upload User Profiles**: These profiles are stored within the transmitter, allowing the user to switch easily between different pre-configured settings.
+- **Upload User Profiles**: These profiles are stored within the transmitter, allowing the user to switch easily between different pre-configured settings. For more details, see the :doc:`binary_file_creation_guide`.
 
 .. image:: img/webapp/2.png
    :alt: User profile upload option
