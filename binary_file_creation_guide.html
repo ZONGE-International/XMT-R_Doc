@@ -1,0 +1,186 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Binary File Creation Guide &mdash; XMT-R  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+
+  
+    <link rel="shortcut icon" href="_static/zonge.ico"/>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/Zonge_logo_white_transparent.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Binary File Creation Guide</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#step-by-step-instructions">Step-by-Step Instructions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">XMT-R</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Binary File Creation Guide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/binary_file_creation_guide.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="binary-file-creation-guide">
+<h1>Binary File Creation Guide<a class="headerlink" href="#binary-file-creation-guide" title="Link to this heading"></a></h1>
+<p>This documentation provides a detailed guide on how to create a binary file using Python. This guide demonstrates key concepts such as converting sequences to bytes and writing those bytes into a file.</p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>In this guide, we will cover:</p>
+<ul class="simple">
+<li><p>Setting up the necessary Python environment</p></li>
+<li><p>Defining sequences and padding them</p></li>
+<li><p>Converting sequences to byte format</p></li>
+<li><p>Writing data to a binary file</p></li>
+<li><p>Viewing and debugging the output</p></li>
+</ul>
+</section>
+<section id="step-by-step-instructions">
+<h2>Step-by-Step Instructions<a class="headerlink" href="#step-by-step-instructions" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p><strong>Setup and Imports</strong></p>
+<p>To work with sequences and convert them to binary, we need the <cite>numpy</cite> library. Install numpy if you haven’t already by running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">numpy</span>
+</pre></div>
+</div>
+<p>In your Python script, import numpy with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>User-Defined Variables</strong></p>
+<p>To create a binary file, you first define the sequences you want to write into that file.
+For example, we have two sequences: <cite>pol</cite> and <cite>on_</cite>. The <cite>pol</cite> sequence represents the polarity, and the <cite>on_</cite> sequence is for “active low” (off) status. Additionally, define the filename for the binary file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define the filename (adjust as needed)</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;PRBS_4.usm&quot;</span>
+<span class="n">pol</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">on_</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Padding Sequences</strong></p>
+<p>Since byte representation typically requires sequences of length that are multiples of 8, we need to pad these sequences with zeros until their length matches a multiple of 8:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">slen</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">pol</span><span class="p">)</span>  <span class="c1"># Length of original sequence</span>
+<span class="n">apol</span> <span class="o">=</span> <span class="mi">8</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">pol</span><span class="p">)</span> <span class="o">%</span> <span class="mi">8</span>  <span class="c1"># Calculate padding</span>
+<span class="n">pol</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">apol</span><span class="p">)</span>  <span class="c1"># Pad pol sequence with zeros</span>
+<span class="n">on_</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">apol</span><span class="p">)</span>  <span class="c1"># Pad on_ sequence with zeros</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Convert Sequences to Bytes</strong></p>
+<p>We can then convert the padded sequences into a byte array using <cite>numpy.packbits()</cite>. This function takes a list of bits and converts them to an equivalent byte array:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pol_bytes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">packbits</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">pol</span><span class="p">),</span> <span class="n">bitorder</span><span class="o">=</span><span class="s1">&#39;big&#39;</span><span class="p">)</span>
+<span class="n">on_bytes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">packbits</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">on_</span><span class="p">),</span> <span class="n">bitorder</span><span class="o">=</span><span class="s1">&#39;big&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here, <cite>bitorder=’big’</cite> ensures that the bits are packed in big-endian order, meaning the most significant bit is first.</p>
+</li>
+<li><p><strong>Writing to a Binary File</strong></p>
+<p>After converting sequences to bytes, the next step is to create a binary file and write the necessary data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">binary_file</span><span class="p">:</span>
+    <span class="n">binary_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">slen</span><span class="o">.</span><span class="n">to_bytes</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">byteorder</span><span class="o">=</span><span class="s1">&#39;big&#39;</span><span class="p">))</span>  <span class="c1"># Write length as 2 bytes</span>
+    <span class="n">binary_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">pol_bytes</span><span class="p">)</span>  <span class="c1"># Write polarity sequence</span>
+    <span class="n">binary_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">on_bytes</span><span class="p">)</span>  <span class="c1"># Write ~ON sequence</span>
+</pre></div>
+</div>
+<p>The <cite>wb</cite> flag ensures that the file is opened in binary write mode. Note that <cite>slen.to_bytes(2, byteorder=’big’)</cite> writes the length of the original sequence as 2 bytes.</p>
+</li>
+<li><p><strong>Debugging and Output</strong></p>
+<p>To view the byte arrays or for debugging purposes, print the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">pol_bytes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">on_bytes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sequence length = </span><span class="si">{</span><span class="n">slen</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">slen</span><span class="o">.</span><span class="n">to_bytes</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">byteorder</span><span class="o">=</span><span class="s2">&quot;big&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pol array = </span><span class="si">{</span><span class="n">pol</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ON_ array = </span><span class="si">{</span><span class="n">on_</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This will display the byte arrays, sequence lengths, and the contents of <cite>pol</cite> and <cite>on_</cite> after padding.</p>
+</li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, ZONGE International.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
