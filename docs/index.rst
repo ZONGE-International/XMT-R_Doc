@@ -133,6 +133,7 @@ Additional Guides
 
 .. toctree::
    :maxdepth: 2
+   :caption: Contents
 
-   binary_file_creation_guide  # This will link to your new file without altering other sections
+   binary_file_creation_guide  # This line links to binary_file_creation_guide.rst
 
