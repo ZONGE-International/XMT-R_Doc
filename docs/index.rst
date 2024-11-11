@@ -132,7 +132,7 @@ Additional Guides
 -----------------
 
 .. toctree::
-   :maxdepth: 2
+..   :maxdepth: 2
 
    binary_file_creation_guide  # This will link to your new file without altering other sections
 
