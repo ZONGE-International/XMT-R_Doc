@@ -112,7 +112,8 @@ Users can interact with dropdown menus to select the desired Mode and Frequency 
 
 In **Custom Mode**, users also have the ability to: (This option is only available through the web app.)
 
-- **Upload User Profiles**: These profiles are stored within the transmitter, allowing the user to switch easily between different pre-configured settings. For more details, see the :doc:`binary_file_creation_guide`.
+- **Upload User Profiles**: These profiles are stored within the transmitter, allowing the user to switch easily between different pre-configured settings. 
+For more details, see the :doc:`binary_file_creation_guide`.
 
 .. image:: img/webapp/2.png
    :alt: User profile upload option
@@ -128,12 +129,4 @@ The web interface includes an **Admin Page** that offers additional settings and
 .. image:: img/webapp/3.png
    :alt: Admin page options
 
-Additional Guides
------------------
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents
-
-   binary_file_creation_guide  # This line links to binary_file_creation_guide.rst
 
