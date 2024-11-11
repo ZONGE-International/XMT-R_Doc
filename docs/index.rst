@@ -128,3 +128,10 @@ The web interface includes an **Admin Page** that offers additional settings and
 .. image:: img/webapp/3.png
    :alt: Admin page options
 
+Additional Guides
+-----------------
+.. toctree::
+   :maxdepth: 2
+
+   binary_file_creation_guide
+
