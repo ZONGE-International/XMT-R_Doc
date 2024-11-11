@@ -130,8 +130,9 @@ The web interface includes an **Admin Page** that offers additional settings and
 
 Additional Guides
 -----------------
+
 .. toctree::
    :maxdepth: 2
 
-   binary_file_creation_guide
+   binary_file_creation_guide  # This will link to your new file without altering other sections
 
